@@ -16,4 +16,11 @@ describe(Detail) do
   it "the info array should be empty" do
     expect(Detail.all()).to(eq([]))
   end
+
+  describe("#save_to_info") do
+    it "will push to info array" do
+      test_detail = Detail.new({:address => "2915 hwy 78", :home_phone => "123-456-7890", :cell_phone => '321-654-0987', :email => "john@gmail.com"})
+      expect(test_detail.save_to_info()).to(eq([test_detail]))
+    end
+  end
 end

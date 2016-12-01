@@ -13,4 +13,7 @@ class Detail
     @@info
   end
 
+  def save_to_info
+    @@info.push(self)
+  end
 end
