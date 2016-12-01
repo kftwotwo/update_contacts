@@ -21,4 +21,10 @@ describe(Contact) do
       expect(test_contact.add_contact_to_array()).to(eq([test_contact]))
     end
   end
+
+  describe('.clear') do
+    it "will clear the array" do
+      expect(Contact.clear()).to(eq([]))
+    end
+  end
 end

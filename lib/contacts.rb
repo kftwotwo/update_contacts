@@ -14,4 +14,8 @@ class Contact
   def add_contact_to_array
     @@people.push(self)
   end
+
+  define_singleton_method(:clear) do
+    @@people = []
+  end
 end
