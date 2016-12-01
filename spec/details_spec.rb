@@ -12,9 +12,10 @@ describe(Detail) do
     end
   end
 
-  describe(".all")
-  it "the info array should be empty" do
-    expect(Detail.all()).to(eq([]))
+  describe(".all")do
+    it "the info array should be empty" do
+      expect(Detail.all()).to(eq([]))
+    end
   end
 
   describe("#save_to_info") do
@@ -23,4 +24,11 @@ describe(Detail) do
       expect(test_detail.save_to_info()).to(eq([test_detail]))
     end
   end
+
+  describe(".clear") do
+    it "will clear the array" do
+        test_detail = Detail.new({:address => "2915 hwy 78", :home_phone => "123-456-7890", :cell_phone => '321-654-0987', :email => "john@gmail.com"}).save_to_info()
+        expect(Detail.clear()).to(eq([]))
+    end
+  end 
 end

@@ -16,4 +16,8 @@ class Detail
   def save_to_info
     @@info.push(self)
   end
+
+  define_singleton_method(:clear) do
+    @@info = []
+  end
 end
