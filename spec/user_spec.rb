@@ -45,11 +45,13 @@ describe(User) do
     end
   end
 
-  # describe(".find") do
-  #   it "will find the users by id" do
-  #   test_user = User.new(:name => 'John').save()
-  #   test_user2 = User.new(:name => 'Kevin').save()
-  #   expect(User.find(test_user.id())).to(eq(test_user))
-  #   end
-  # end
+  describe(".find") do
+    it "will find the users by id" do
+    test_user = User.new(:name => 'John')
+    test_user.save()
+    test_user2 = User.new(:name => 'Kevin')
+    test_user2.save()
+    expect(User.find(test_user.id_user())).to(eq(test_user))
+    end
+  end
 end

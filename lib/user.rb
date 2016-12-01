@@ -26,7 +26,7 @@ class User
   define_singleton_method(:find) do |id_user|
     found_user_id = nil
     @@users_arr.each do |name|
-      if name.id() == id_user
+      if name.id_user() == id_user
         found_user_id = name
       end
     end
