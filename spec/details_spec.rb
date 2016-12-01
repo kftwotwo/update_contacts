@@ -30,5 +30,15 @@ describe(Detail) do
         test_detail = Detail.new({:address => "2915 hwy 78", :home_phone => "123-456-7890", :cell_phone => '321-654-0987', :email => "john@gmail.com"}).save_to_info()
         expect(Detail.clear()).to(eq([]))
     end
-  end 
+  end
+
+  describe(".find") do
+    it "will find the id of each inputed detail" do
+        test_detail = Detail.new({:address => "2915 hwy 78", :home_phone => "123-456-7890", :cell_phone => '321-654-0987', :email => "john@gmail.com"})
+        test_detail.save_to_info()
+        test_detail2 = Detail.new({:address => "2915 hwy 78", :home_phone => "123-456-7890", :cell_phone => '321-654-0987', :email => "john@gmail.com"})
+        test_detail2.save_to_info()
+        expect(Detail.find(test_detail2.id_detail())).to(eq(test_detail2))
+    end
+  end
 end
