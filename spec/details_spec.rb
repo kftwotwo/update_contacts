@@ -11,4 +11,9 @@ describe(Detail) do
       expect(test_detail.email()).to(eq("john@gmail.com"))
     end
   end
+
+  describe(".all")
+  it "the info array should be empty" do
+    expect(Detail.all()).to(eq([]))
+  end
 end
