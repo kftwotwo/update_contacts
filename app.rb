@@ -5,3 +5,7 @@ require ("./lib/details")
 get('/') do
   erb(:index)
 end
+
+get('/') do
+  
+end
