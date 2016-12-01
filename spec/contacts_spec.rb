@@ -8,4 +8,10 @@ describe(Contact) do
       expect(test_contact.name()).to(eq("Kevin"))
     end
   end
+
+  describe('.all') do
+    it "will return array" do
+      expect(Contact.all()).to(eq([]))
+    end
+  end
 end
