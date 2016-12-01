@@ -1,7 +1,11 @@
 require('rspec')
 require('user')
 
+
 describe(User) do
+  before :each do
+    User.clear
+  end
   describe('#initialize') do
     it "will fetch the name" do
       test_user = User.new(:name => 'Kevin')
@@ -23,13 +27,13 @@ describe(User) do
     end
   end
 
-  # describe(".all") do
-  #   it "will display all users" do
-  #     test_user = User.new(:name => '')
-  #     test_user.save()
-  #     test_user2 = User.new(:name => 'Kevin')
-  #     test_user2.save()
-  #     expect(User.all()).to(eq([test_user, test_user2]))
-  #   end
-  # end
+  describe(".all") do
+    it "will display all users" do
+      test_user = User.new(:name => '')
+      test_user.save()
+      test_user2 = User.new(:name => 'Kevin')
+      test_user2.save()
+      expect(User.all()).to(eq([test_user, test_user2]))
+    end
+  end
 end

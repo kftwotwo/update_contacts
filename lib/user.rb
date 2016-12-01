@@ -13,7 +13,7 @@ class User
     @@users_arr = []
   end
 
-  # define_singleton_method(:all) do
-  #   @@users_arr
-  # end
+  define_singleton_method(:all) do
+    @@users_arr
+  end
 end
