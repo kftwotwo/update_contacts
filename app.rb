@@ -6,6 +6,10 @@ get('/') do
   erb(:index)
 end
 
-get('/') do
-  
+get('/users/new') do
+  erb(:new_user)
+end
+
+get('/users') do
+  erb(:users)
 end
