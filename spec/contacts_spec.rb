@@ -18,7 +18,7 @@ describe(Contact) do
   describe('#add_contact_to_array') do
     it "will return name" do
       test_contact = Contact.new({:name => 'Kevin'})
-      expect(test_contact.add_contact_to_people()).to(eq([test_contact]))
+      expect(test_contact.add()).to(eq([test_contact]))
     end
   end
 
@@ -31,16 +31,16 @@ describe(Contact) do
   describe('#id') do
     it "will return name" do
       test_contact = Contact.new({:name => 'Kevin', :id => 1})
-      expect(test_contact.add_contact_to_people()).to(eq([test_contact]))
+      expect(test_contact.add()).to(eq([test_contact]))
     end
   end
 
   describe('.find') do
     it "will find the id number" do
       test_contact = Contact.new(:name => "Kevin")
-      test_contact.add_contact_to_people()
+      test_contact.add()
       test_contact2 = Contact.new(:name => "John")
-      test_contact2.add_contact_to_people()
+      test_contact2.add()
       expect(Contact.find(test_contact2.id())).to(eq(test_contact2))
     end
   end

@@ -1,10 +1,11 @@
 class User
   @@users_arr = []
-  attr_reader(:name, :id_user)
+  attr_reader(:name, :id_user, :contacts)
 
   def initialize(attributes)
     @name = attributes.fetch(:name)
     @id_user = @@users_arr.length + 1
+    @contacts = []
   end
 
   def save
@@ -31,5 +32,9 @@ class User
       end
     end
     found_user_id
+  end
+
+  def add_contact(contact)
+    @contacts.push(contact)
   end
 end

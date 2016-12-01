@@ -1,23 +1,23 @@
 class Contact
-  @@people = []
+  @@contacts = []
   attr_reader(:name, :id)
 
 
   def initialize(attributes)
     @name = attributes.fetch(:name)
-    @id = @@people.length + 1
+    @id = @@contacts.length + 1
   end
 
   define_singleton_method(:all) do
-    @@people
+    @@contacts
   end
 
-  def add_contact_to_people
-    @@people.push(self)
+  def add
+    @@contacts.push(self)
   end
 
   define_singleton_method(:clear) do
-    @@people = []
+    @@contacts = []
   end
 
   def id
@@ -25,12 +25,12 @@ class Contact
   end
 
   define_singleton_method(:find) do |id|
-    found_person_id = nil
-    @@people.each do |person|
-      if person.id() == id
-        found_person_id = person
+    found_contact_id = nil
+    @@contacts.each do |contact|
+      if contact.id() == id
+        found_contact_id = contact
       end
     end
-    found_person_id
+    found_contact_id
   end
 end

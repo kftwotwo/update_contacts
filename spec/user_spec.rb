@@ -54,4 +54,13 @@ describe(User) do
     expect(User.find(test_user.id_user())).to(eq(test_user))
     end
   end
+
+  describe("#add_contact") do
+    it "will add contact to user" do
+      test_user = User.new(:name => "Ron")
+      test_user.save()
+      contact = Contact.new(:name => "Logan")
+      expect(test_user.add_contact(contact)).to(eq([contact]))
+    end
+  end
 end

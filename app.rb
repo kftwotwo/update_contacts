@@ -23,3 +23,9 @@ post('/users') do
   @users = User.all()
   erb(:success)
 end
+
+get("/users/:id") do
+  @user = User.find(params.fetch('id').to_i())
+  @contacts = Contact
+  erb(:contacts)
+end
