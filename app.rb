@@ -1,6 +1,7 @@
 require("sinatra")
 require ("./lib/contacts")
 require ("./lib/details")
+require ("./lib/user")
 
 get('/') do
   erb(:index)
@@ -11,5 +12,14 @@ get('/users/new') do
 end
 
 get('/users') do
+  @users = User.all()
   erb(:users)
+end
+
+post('/users') do
+  inputed_user = params.fetch('inputed_user')
+  user = User.new(:name => inputed_user)
+  user.save()
+  @users = User.all()
+  erb(:success)
 end
