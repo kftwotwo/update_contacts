@@ -10,4 +10,8 @@ class Contact
   define_singleton_method(:all) do
     @@people
   end
+
+  def add_contact_to_array
+    @@people.push(self)
+  end
 end
