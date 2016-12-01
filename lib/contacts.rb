@@ -12,7 +12,7 @@ class Contact
     @@people
   end
 
-  def add_contact_to_array
+  def add_contact_to_people
     @@people.push(self)
   end
 
@@ -22,5 +22,15 @@ class Contact
 
   def id
     @id
+  end
+
+  define_singleton_method(:find) do |id|
+    found_person_id = nil
+    @@people.each do |person|
+      if person.id() == id
+        found_person_id = person
+      end
+    end
+    found_person_id
   end
 end
