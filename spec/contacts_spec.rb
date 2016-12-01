@@ -27,4 +27,11 @@ describe(Contact) do
       expect(Contact.clear()).to(eq([]))
     end
   end
+
+  describe('#id') do
+    it "will return name" do
+      test_contact = Contact.new({:name => 'Kevin', :id => 1})
+      expect(test_contact.add_contact_to_array()).to(eq([test_contact]))
+    end
+  end
 end

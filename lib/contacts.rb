@@ -1,10 +1,11 @@
 class Contact
   @@people = []
-  attr_reader(:name)
+  attr_reader(:name, :id)
 
 
   def initialize(attributes)
     @name = attributes.fetch(:name)
+    @id = @@people.length + 1
   end
 
   define_singleton_method(:all) do
@@ -17,5 +18,9 @@ class Contact
 
   define_singleton_method(:clear) do
     @@people = []
+  end
+
+  def id
+    @id
   end
 end
