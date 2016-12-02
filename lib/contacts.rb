@@ -20,10 +20,6 @@ class Contact
     @@contacts = []
   end
 
-  def id
-    @id
-  end
-
   define_singleton_method(:find) do |id|
     found_contact_id = nil
     @@contacts.each do |contact|

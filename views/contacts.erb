@@ -1,10 +1,10 @@
 <h1>Here are all of your contacts</h1>
 
 <ul>
-  <% @contacts.each do |contact| %>
-    <li><a href="/contacts/<%= contact.id_user() %>"> <%= contact.name() %></a></li>
+  <% @user.contacts.each do |contact| %>
+    <li><a href="/contacts/<%= contact.id_user() %>"> <%= contact.contact_name() %></a></li>
   <% end %>
 </ul>
 
-<!-- <a href="/"><button type="button">Add people</button></a>  add people-->
+<a href="/contacts/new"><button type="button">Add people</button></a>
 <a href="/"><button type="button">Back</button></a>
